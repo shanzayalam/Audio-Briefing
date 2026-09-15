@@ -1,0 +1,49 @@
+# Core dependencies
+openai>=1.0.0  # For GPT-based analysis and script writing
+python-dotenv>=1.0.0  # Environment variables
+pydantic>=2.0.0  # Data validation
+opik>=0.2.0  # LLM workflow tracing and monitoring
+
+# FastAPI & Web Framework
+fastapi>=0.104.0  # Web framework for API
+uvicorn[standard]>=0.24.0  # ASGI server for FastAPI
+
+# LangGraph & LangChain
+langgraph>=0.2.0  # Graph-based workflow orchestration
+langchain>=0.3.0  # LLM framework
+langchain-openai>=0.2.0  # OpenAI integration for LangChain
+
+# Redis & Queue Management
+redis>=4.0.0,<5.0.0  # Redis client (downgrade for RQ 1.16 compatibility)
+rq>=1.16.0,<2.0.0  # Redis Queue for async job processing (Windows compatible)
+apscheduler>=3.10.0  # Job scheduling
+
+# Notifications
+requests>=2.31.0  # For webhook notifications
+python-telegram-bot>=20.0  # Optional: Telegram notifications
+sendgrid>=6.11.0  # Email notifications (optional)
+
+# Text-to-Speech
+elevenlabs>=0.2.0  # High-quality TTS 
+edge-tts>=6.1.0  # Microsoft Edge TTS (Free, High Quality)
+pyttsx3>=2.90  # System TTS (Windows SAPI/eSpeak, truly local)
+kokoro-onnx>=0.1.0  # Kokoro TTS (CPU-optimized, 8/10 quality, auto-downloads models)
+scipy>=1.10.0  # Required for audio file writing
+# gTTS>=2.3.0  # Free alternative
+
+# Text processing
+nltk>=3.8.0  # Natural language processing
+textstat>=0.7.0  # Readability analysis
+sumy>=0.11.0  # Text summarization
+
+# Audio processing
+pydub>=0.25.0  # Audio manipulation
+
+# Database
+pymongo>=4.6.0  # MongoDB client
+pymongo[srv]>=4.6.0  # MongoDB with DNS seed list support
+
+# Utilities
+beautifulsoup4>=4.12.0  # For article extraction if needed
+newspaper4k>=0.9.0  # Article parsing
+boto3>=1.34.0  # AWS S3 for file storage
