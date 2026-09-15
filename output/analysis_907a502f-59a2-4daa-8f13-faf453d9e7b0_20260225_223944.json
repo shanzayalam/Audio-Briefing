@@ -1,0 +1,16 @@
+{
+  "total_articles": 10,
+  "total_allocated_time": 155,
+  "category_distribution": {
+    "economy": 7,
+    "other": 1,
+    "business": 1,
+    "entertainment": 1
+  },
+  "tier_breakdown": {
+    "tier1_high": 2,
+    "tier2_medium": 3,
+    "tier3_low": 5
+  },
+  "average_importance": 7.0
+}

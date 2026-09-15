@@ -1,0 +1,13 @@
+{
+  "total_articles": 1,
+  "total_allocated_time": 202,
+  "category_distribution": {
+    "other": 1
+  },
+  "tier_breakdown": {
+    "tier1_high": 1,
+    "tier2_medium": 0,
+    "tier3_low": 0
+  },
+  "average_importance": 1.0
+}

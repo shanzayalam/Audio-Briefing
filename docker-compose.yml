@@ -1,0 +1,62 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: audio_briefing_api
+    command: uvicorn api.main:app --host 0.0.0.0 --port 8002
+    ports:
+      - "8002:8002"
+    env_file:
+      - .env
+    networks:
+      - default
+      - newsagent_default
+    restart: always
+
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: audio_briefing_worker
+    command: python worker.py
+    env_file:
+      - .env
+    networks:
+      - default
+      - newsagent_default
+    restart: always
+
+  scheduler:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: audio_briefing_scheduler
+    command: uvicorn scheduler.main:app --host 0.0.0.0 --port 8007
+    ports:
+      - "8007:8007"
+    env_file:
+      - .env
+    depends_on:
+      - api
+    networks:
+      - default
+      - newsagent_default
+    restart: always
+
+  # mongodb:
+  #   image: mongo:latest
+  #   ports:
+  #     - "27017:27017"
+  #   volumes:
+  #     - mongodb_data:/data/db
+  #   networks:
+  #     - default
+  #     - newsagent_default
+
+# volumes:
+#   mongodb_data:
+
+networks:
+  newsagent_default:
+    external: true
